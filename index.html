@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Galaxy Curve Lab</title><link rel="stylesheet" href="lab.css"><script src="lab.js" defer></script></head>
+<body><header><span class="logo" aria-hidden="true">G</span><h1>Galaxy Curve Lab</h1><span class="session">Local session</span></header>
+<main><aside><h2>Data source</h2><input type="file" id="file" accept=".csv,text/csv" hidden><button id="open">Open CSV</button>
+<p id="source">No file selected</p><button id="clear" disabled>Clear session</button><p role="status" id="notice"></p>
+<fieldset id="fields" disabled><legend>Columns</legend>
+<label>Radius<select id="radius"></select></label><label>Measured value<select id="value"></select></label>
+<label>Uncertainty<select id="error"></select></label><label>Your curve<select id="curve"></select></label>
+<label>Object identifier<select id="object"></select></label></fieldset></aside>
+<section class="workspace"><div class="bar"><h2>Measurements</h2><label class="objects">Object <select id="series" disabled><option>All rows</option></select></label></div>
+<div class="tools"><div class="tabs" role="group" aria-label="View"><button id="plot" aria-pressed="true">Plot</button><button id="table" aria-pressed="false">Table</button></div>
+<button id="export" disabled>Export SVG</button></div>
+<div id="graphic"><svg id="chart" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Radial measurements"></svg><div id="empty">No measurements loaded</div></div>
+<div id="data" hidden><div class="scroll"><table><thead id="head"></thead><tbody id="body"></tbody></table></div>
+<div class="pager"><button id="prev" aria-label="Previous page" title="Previous page">&#8592;</button><span id="page"></span><button id="next" aria-label="Next page" title="Next page">&#8594;</button></div></div>
+<footer><span id="count">0 points</span><span class="key"><i></i> Observed</span><span class="key" id="curveKey" hidden><b></b> Your curve</span></footer></section></main></body></html>
